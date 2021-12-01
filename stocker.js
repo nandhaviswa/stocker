@@ -1,6 +1,6 @@
 /**
- * Calculate and print how much quantity we need to buy
- * to acheive the aaverage price
+ * How much quantity of stock I need to buy at the current price to acheive the provided average price
+ * How much lumpsum will I need for the quantity of stock
  * @param stockName - Name of the stock
  * @param q1 - Existing stock quantity
  * @param p1 - Existing stock average price
@@ -19,7 +19,8 @@ function type1(stockName, q1, p1, p2, p){
 }
 
 /**
- * Calculate and print how much quantity we can buy and what will be the resulting average
+ * How much quantity of stock I can buy with provide lumpsum at current price and 
+ * What will be the resulting average
  * @param stockName - Name of the stock
  * @param q1 - Existing stock quantity
  * @param p1 - Existing stock average price
@@ -42,7 +43,8 @@ function type2(stockName, q1, p1, p2, l2){
 }
 
 /**
- * Calculate how much you need to invest today so that you acheive average tomorrow
+ * How much lumpsum you need today to acheive average at the second transaction
+ * How much quantity you can buy at the current price
  * @param stockName - Name of the stock
  * @param q1 - How much quantity I need to buy today
  * @param p1 - Current stock price (LTP)
@@ -62,11 +64,33 @@ function type3(stockName, p1, p2, l2, p){
     console.log(`\nName of the stock is ${stockName}`);
     console.log(`You will have to invest Rs. ${l1} with balance ${b2} today to buy ${q1} quantity @ Rs. ${p1}.`);
     console.log(`You can later buy ${q2} quantity @ Rs. ${p2} with lumpsum Rs. ${l2} to acheive average Rs. ${p}.`);
-    console.log(`You will have a total of ${q1+q2} quantity @ average price Rs. ${p}.\n`);
+    console.log(`You will have a total of ${q1+q2} quantity @ average price Rs. ${((p1 * q1) + (p2 * q2))/(q1+q2)}.\n`);
+}
+
+/**
+ * At what price in future, you can acheive the average.
+ * @param stockName - Name of the stock
+ * @param q1 - How much quantity I need to buy today
+ * @param p1 - Current stock price (LTP)
+ * @param q2 - Quantity of stock I will buy next session
+ * @param p2 - Price of the stock in next session
+ * @param l2 - Lumpsum I will invest in next session
+ * @param p - Average stock price we will acheive
+ * @see 
+ * @since Wed December 01, 2021 10:10 AM.
+ */
+function type4(stockName, q1, p1, l2, p){
+    var q2 = Math.ceil(( l2 + q1 * ( p1 - p ) ) / p);
+    var p2 = l2 / q2;
+    console.log(`\nName of the stock is ${stockName}`);
+    console.log(`Currently you have ${q1} quantity @ ${p1} price average with worth ${q1 * p1}.`);
+    console.log(`When the price is @ Rs. ${p2}, You can buy ${q2} quantity with Rs. ${l2} to acheive ${p} average price`);
+    console.log(`You will have a total of ${q1+q2} quantity @ average price Rs. ${((p1 * q1) + (p2 * q2))/(q1+q2)}.\n`);
 }
 
 module.exports = {
     type1,
     type2,
     type3,
+    type4,
 };
