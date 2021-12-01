@@ -82,9 +82,10 @@ function type3(stockName, p1, p2, l2, p){
 function type4(stockName, q1, p1, l2, p){
     var q2 = Math.ceil(( l2 + q1 * ( p1 - p ) ) / p);
     var p2 = l2 / q2;
+    var b2 = l2 - (q2 * p2);
     console.log(`\nName of the stock is ${stockName}`);
     console.log(`Currently you have ${q1} quantity @ ${p1} price average with worth ${q1 * p1}.`);
-    console.log(`When the price is @ Rs. ${p2}, You can buy ${q2} quantity with Rs. ${l2} to acheive ${p} average price`);
+    console.log(`When the price is @ Rs. ${p2}, You can buy ${q2} quantity with Rs. ${l2} with balance Rs. ${b2} to acheive ${p} average price`);
     console.log(`You will have a total of ${q1+q2} quantity @ average price Rs. ${((p1 * q1) + (p2 * q2))/(q1+q2)}.\n`);
 }
 
