@@ -17,6 +17,7 @@ function type1(stockName, q1, p1, p2, p){
     console.log(`You will have to buy ${q2} quantity @ Rs. ${p2}  ( Total Rs. ${q2*p2} ) to acheive ${p} average price`);
     console.log(`You will have a total of ${q1+q2} quantity @ average price Rs. ${((p1 * q1) + (p2 * q2))/(q1+q2)} {computed}.\n`);
 }
+
 /**
  * Calculate and print how much quantity we can buy and what will be the resulting average
  * @param stockName - Name of the stock
@@ -30,7 +31,6 @@ function type1(stockName, q1, p1, p2, p){
  * @see 
  * @since Wed December 01, 2021 10:10 AM.
  */
-
 function type2(stockName, q1, p1, p2, l2){
     var q2 = Math.floor(l2/p2);
     var b1 = l2 - ( q2 * p2 );
@@ -40,6 +40,7 @@ function type2(stockName, q1, p1, p2, l2){
     console.log(`You will be able to buy ${q2} quantity @ Rs. ${p2} with lumpsum Rs. ${l2} with balance Rs. ${b1}`);
     console.log(`You will have a total of ${q1+q2} quantity @ average price Rs. ${p}.\n`);
 }
+
 /**
  * Calculate how much you need to invest today so that you acheive average tomorrow
  * @param stockName - Name of the stock
@@ -53,7 +54,6 @@ function type2(stockName, q1, p1, p2, l2){
  * @see 
  * @since Wed December 01, 2021 10:10 AM.
  */
-
 function type3(stockName, p1, p2, l2, p){
     var q2 = Math.floor(l2 / p2);
     var b2 = l2 - (q2 * p2);
