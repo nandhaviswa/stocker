@@ -65,14 +65,8 @@ function type3(stockName, p1, p2, l2, p){
     console.log(`You will have a total of ${q1+q2} quantity @ average price Rs. ${p}.\n`);
 }
 
-type1('TEST', 10, 100, 50, 75);
-type1('NALTIONALUM', 23, 99.09, 87.15, 90);
-type1('CHALET', 3, 262.33, 226, 240);
-console.log('\n--------------------------------[ nandha ]---------------------------------\n');
-type2('TEST', 10, 100, 50, 500);
-type2('NALTIONALUM', 23, 99.09, 87.15, 6449.10);
-type2('CHALET', 3, 262.33, 226, 1130);
-console.log('\n--------------------------------[ nandha ]---------------------------------\n');
-type3('TEST', 100, 50, 500, 75);
-type3('NALTIONALUM', 99.09, 87.15, 6449.10, 90);
-type3('CHALET', 262.33, 226, 1130, 240);
+module.exports = {
+    type1,
+    type2,
+    type3,
+};
