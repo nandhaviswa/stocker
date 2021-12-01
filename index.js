@@ -11,3 +11,7 @@ console.log('\n--------------------------------[ nandha ]-----------------------
 stocker.type3('TEST', 100, 50, 500, 75);
 stocker.type3('NALTIONALUM', 99.09, 87.15, 6449.10, 90);
 stocker.type3('CHALET', 262.33, 226, 1130, 240);
+console.log('\n--------------------------------[ nandha ]---------------------------------\n');
+stocker.type4('TEST', 10, 100, 500, 75);
+stocker.type4('NALTIONALUM', 23, 99.09, 6449.10, 90);
+stocker.type4('CHALET', 3, 262.33, 1130, 240);
