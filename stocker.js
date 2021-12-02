@@ -12,10 +12,12 @@
  */
 function type1(stockName, q1, p1, p2, p){
     var q2 = Math.ceil(q1 * ( (p - p1) / (p2 - p) ));
+    var l = ( ( q1 * p1 ) + ( q2 * p2 ) );
     console.log(`\nName of the stock is ${stockName}`);
     console.log(`Currently you have ${q1} quantity @ ${p1} price average with worth ${q1 * p1}.`);
     console.log(`You will have to buy ${q2} quantity @ Rs. ${p2}  ( Total Rs. ${q2*p2} ) to acheive ${p} average price`);
-    console.log(`You will have a total of ${q1+q2} quantity @ average price Rs. ${((p1 * q1) + (p2 * q2))/(q1+q2)} {computed}.\n`);
+    console.log(`You will have a total of ${q1+q2} quantity @ average price Rs. ${((p1 * q1) + (p2 * q2))/(q1+q2)} {computed}`);
+    console.log(`Total investment cost is Rs. ${l}.\n`);
 }
 
 /**
@@ -36,10 +38,12 @@ function type2(stockName, q1, p1, p2, l2){
     var q2 = Math.floor(l2/p2);
     var b1 = l2 - ( q2 * p2 );
     var p = ( (q1 * p1) + (q2 * p2) ) / ( q1 + q2 );
+    var l = ( ( q1 * p1 ) + ( q2 * p2 ) );
     console.log(`\nName of the stock is ${stockName}`);
     console.log(`Currently you have ${q1} quantity @ ${p1} price average with worth ${q1 * p1}.`);
     console.log(`You will be able to buy ${q2} quantity @ Rs. ${p2} with lumpsum Rs. ${l2} with balance Rs. ${b1}`);
-    console.log(`You will have a total of ${q1+q2} quantity @ average price Rs. ${p}.\n`);
+    console.log(`You will have a total of ${q1+q2} quantity @ average price Rs. ${p}`);
+    console.log(`Total investment cost is Rs. ${l}.\n`);
 }
 
 /**
@@ -61,10 +65,12 @@ function type3(stockName, p1, p2, l2, p){
     var b2 = l2 - (q2 * p2);
     var q1 = Math.floor(( q2 * ( p2 - p ) ) / ( p - p1 ));
     var l1 = q1 * p1;
+    var l = ( ( q1 * p1 ) + ( q2 * p2 ) );
     console.log(`\nName of the stock is ${stockName}`);
     console.log(`You will have to invest Rs. ${l1} with balance ${b2} today to buy ${q1} quantity @ Rs. ${p1}.`);
     console.log(`You can later buy ${q2} quantity @ Rs. ${p2} with lumpsum Rs. ${l2} to acheive average Rs. ${p}.`);
-    console.log(`You will have a total of ${q1+q2} quantity @ average price Rs. ${((p1 * q1) + (p2 * q2))/(q1+q2)}.\n`);
+    console.log(`You will have a total of ${q1+q2} quantity @ average price Rs. ${((p1 * q1) + (p2 * q2))/(q1+q2)}`);
+    console.log(`Total investment cost is Rs. ${l}.\n`);
 }
 
 /**
@@ -83,10 +89,12 @@ function type4(stockName, q1, p1, l2, p){
     var q2 = Math.ceil(( l2 + q1 * ( p1 - p ) ) / p);
     var p2 = l2 / q2;
     var b2 = l2 - (q2 * p2);
+    var l = ( ( q1 * p1 ) + ( q2 * p2 ) );
     console.log(`\nName of the stock is ${stockName}`);
     console.log(`Currently you have ${q1} quantity @ ${p1} price average with worth ${q1 * p1}.`);
     console.log(`When the price is @ Rs. ${p2}, You can buy ${q2} quantity with Rs. ${l2} with balance Rs. ${b2} to acheive ${p} average price`);
-    console.log(`You will have a total of ${q1+q2} quantity @ average price Rs. ${((p1 * q1) + (p2 * q2))/(q1+q2)}.\n`);
+    console.log(`You will have a total of ${q1+q2} quantity @ average price Rs. ${((p1 * q1) + (p2 * q2))/(q1+q2)}`);
+    console.log(`Total investment cost is Rs. ${l}.\n`);
 }
 
 module.exports = {
