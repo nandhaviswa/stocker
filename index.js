@@ -1,11 +1,16 @@
 const stocker = require('./stocker');
 
-var stockName = "NALTIONALUM";
-var q1 = 23;
-var p1 = 99.09;
-var p2 = 87.15;
-var p = 90;
-var l2 = 6449.10;
+var stockName = "SBIN";
+var q1 = 25;
+var p1 = 529.85;
+var l1 = 13246.25;
+
+var q2 = 26;
+var p2 = 440;
+var l2 = 11440;
+
+var p = 484.04411764705884;
+var l = 24686.25;
 
 console.log('\n--------------------------------[ type1 ]---------------------------------\n');
 // i have already bought some stocks 
@@ -29,3 +34,8 @@ console.log('\n--------------------------------[ type4 ]------------------------
 // i want to acheive the average with this lumpsum
 // tell me at what price i can trade
 stocker.type4(stockName, q1, p1, l2, p);
+console.log('\n--------------------------------[ type5 ]---------------------------------\n');
+// i have already bought some stocks
+// i want to round off to a lumpsum
+// tell me how much i need to invest now
+stocker.type5(stockName, q1, p1, p2, l);

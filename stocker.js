@@ -97,9 +97,36 @@ function type4(stockName, q1, p1, l2, p){
     console.log(`Total investment cost is Rs. ${l}.\n`);
 }
 
+/**
+ * I have purchased some quantities in the past. I want to round off to a lumpsum.
+ * How much I need now to acheive the total lumpsum.
+ * @param stockName - Name of the stock
+ * @param q1 - Existing stock quantity
+ * @param p1 - Existing stock average price
+ * @param q2 - Quantity of stock we will be able to buy
+ * @param p2 - Current stock price (LTP) or price we will buy
+ * @param p - Average stock price we will acheive
+ * @param l2 - Lumpsum we want to invest
+ * @param b1 - Balance amount
+ * @see 
+ * @since Wed December 01, 2021 10:10 AM.
+ */
+function type5(stockName, q1, p1, p2, l){
+    var l1 = q1 * p1;
+    var q2 = Math.floor( ( l - l1 ) / p2 );
+    var l2 = q2 * p2;
+    var b = l - l1 - l2;
+    var p = ( (q1 * p1) + (q2 * p2) ) / ( q1 + q2 );
+    console.log(`\nName of the stock is ${stockName}`);
+    console.log(`Currently you have ${q1} quantity @ ${p1} price average with worth ${q1 * p1}.`);
+    console.log(`You need a lumpsum Rs. ${l2} to buy ${q2} quantity @ Rs. ${p2} with balance Rs. ${b}`);
+    console.log(`You will have a total of ${q1+q2} quantity @ average price Rs. ${p}`);
+    console.log(`Total investment cost is Rs. ${l1+l2}.\n`);
+}
 module.exports = {
     type1,
     type2,
     type3,
     type4,
+    type5,
 };
